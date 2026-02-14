@@ -1,0 +1,115 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.stars-container {
+  display: flex;
+  gap: 1px;
+  position: relative;
+}
+
+.star {
+  transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Tailles des étoiles */
+.star.small {
+  font-size: 14px;
+}
+
+.star.medium {
+  font-size: 16px;
+}
+
+.star.large {
+  font-size: 20px;
+}
+
+.star.xlarge {
+  font-size: 24px;
+}
+
+/* États des étoiles */
+.star.filled {
+  color: #ffd700;
+  text-shadow: 0 1px 3px rgba(255, 215, 0, 0.3);
+}
+
+.star.half {
+  background: linear-gradient(90deg, #ffd700 50%, #ddd 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Fallback pour les navigateurs qui ne supportent pas background-clip */
+  color: #ffd700;
+}
+
+.star.empty {
+  color: #ddd;
+}
+
+.star.hover-active {
+  color: #ffd700;
+  transform: scale(1.05);
+}
+
+/* Effets de survol */
+.star:hover:not(.readonly) {
+  color: #ffed4e;
+  transform: scale(1.1);
+  text-shadow: 0 2px 4px rgba(255, 215, 0, 0.4);
+}
+
+.stars-container:hover .star {
+  transition: all 0.1s ease;
+}
+
+/* Texte d'accompagnement */
+.rating-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-left: 4px;
+}
+
+.reviews-count {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Animation pour les changements de note */
+@keyframes star-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.star.just-rated {
+  animation: star-pulse 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .star.medium {
+    font-size: 14px;
+  }
+  
+  .star.large {
+    font-size: 18px;
+  }
+  
+  .rating-value {
+    font-size: 13px;
+  }
+  
+  .reviews-count {
+    font-size: 11px;
+  }
+}
