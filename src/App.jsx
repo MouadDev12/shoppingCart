@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import ProductsList from './components/ProductsList';
 import Cart from './components/Cart';
-import './App.css';
+import './styles.css';
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
